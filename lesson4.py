@@ -6,6 +6,7 @@ y = data.target
 print("Features shape:", X.shape)
 print("Labels shape:", y.shape)
 
+#Reza is skipping data classification here and is just going to show classification & training 
 
 # Test-Train split
 from sklearn.model_selection import train_test_split
@@ -20,6 +21,7 @@ from sklearn.linear_model import LogisticRegression
 clf1 = Pipeline([
     ("scaler", StandardScaler()),
     ("clf", LogisticRegression(max_iter=1000, random_state=42))
+    # 42 = setting the algorithmic seed value such that we can reproduce results
 ])
 clf1.fit(X_train, y_train)
 print("Training accuracy:", clf1.score(X_train, y_train))
